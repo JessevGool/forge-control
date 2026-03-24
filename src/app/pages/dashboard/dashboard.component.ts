@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
-import { Printer } from '../../models/printer';
+import { Component, inject } from '@angular/core';
+import { Printer } from '../../models/dto/printer';
 import { PrinterCardComponent } from '../../components/printer-card/printer-card.component';
+import { PrinterService } from '../../services/printer.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -9,18 +10,14 @@ import { PrinterCardComponent } from '../../components/printer-card/printer-card
   styleUrl: './dashboard.component.css',
 })
 export class DashboardComponent {
+   private printerService = inject(PrinterService);
 
+    protected printers: Printer[] = [];
 
-  printers: Printer[] = [
-    {
-      hostname: 'printer1.local',
-      accessCode: '1234',
-      serial: 'ABC123'
-    },
-    {
-      hostname: 'printer2.local',
-      accessCode: '5678',
-      serial: 'DEF456'
+   constructor() {
+    this.printerService.getPrinters().subscribe((response) => {
+      this.printers = response;
     }
-  ]
+    );
+   }
 }

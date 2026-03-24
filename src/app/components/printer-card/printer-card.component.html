@@ -1,5 +1,5 @@
-<div class="printer-card">
-  <h2>{{ printer().hostname }}</h2>
-  <p>Access Code: {{ printer().accessCode }}</p>
+<div class="printer-card" [routerLink]="['/printer', printer().id]">
+  <h2>{{ printer().name ?? printer().hostname }}</h2>
   <p>Serial: {{ printer().serial }}</p>
+  <app-camera-feed [printerId]="printer().id" [isFullSize]="false"></app-camera-feed>
 </div>

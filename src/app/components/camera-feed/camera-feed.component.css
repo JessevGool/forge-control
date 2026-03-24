@@ -1,0 +1,26 @@
+.camera-feed {
+	width: 100%;
+}
+
+.camera-feed__image {
+	width: 100%;
+	border-radius: 8px;
+	display: block;
+	object-fit: cover;
+	background-color: #121212;
+}
+
+.camera-feed__status {
+	margin: 0;
+	padding: 24px 12px;
+	border-radius: 8px;
+	text-align: center;
+	color: #4d5761;
+	background-color: #f3f4f6;
+	font-size: 0.95rem;
+}
+
+.camera-feed__status--error {
+	color: #b42318;
+	background-color: #fef3f2;
+}

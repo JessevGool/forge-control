@@ -1,0 +1,14 @@
+<div class="camera-feed">
+	@if (imageUrl) {
+		<img class="camera-feed__image" [src]="imageUrl" alt="Printer camera feed" />
+	} @else {
+		<p class="camera-feed__status" [class.camera-feed__status--error]="!!errorMessage">
+			{{ isLoading ? 'Loading camera feed...' : (errorMessage || 'No camera frame available.') }}
+		</p>
+	}
+
+	@if (errorMessage && imageUrl) {
+		<p class="camera-feed__status camera-feed__status--error">{{ errorMessage }}</p>
+	}
+</div>
+

@@ -1,9 +1,11 @@
 import { Component, input } from '@angular/core';
-import { Printer } from '../../models/printer';
+import { Printer } from '../../models/dto/printer';
+import { RouterLink } from "@angular/router";
+import { CameraFeedComponent } from "../camera-feed/camera-feed.component";
 
 @Component({
   selector: 'app-printer-card',
-  imports: [],
+  imports: [RouterLink, CameraFeedComponent],
   templateUrl: './printer-card.component.html',
   styleUrl: './printer-card.component.css',
 })

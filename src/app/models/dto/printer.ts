@@ -1,7 +1,8 @@
 
 
 export interface Printer {
+    id: string;
+    name?: string;
     hostname: string;
-    accessCode: string;
     serial: string;
 }
